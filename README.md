@@ -24,7 +24,7 @@ Target Host: 127.0.0.1 TCP Port: 22 status : open. <br />
 Target Host: 127.0.0.1 TCP Port: 23 status : open. <br />
 Target Host: 127.0.0.1 TCP Port: 80 status : closed. <br />
 Target Host: 192.168.0.100 TCP Port: 123 status : open. <br />
-Target Host: 192.168.0.100 TCP Port: 22 status : closed. <br />
+Target Host: 192.168.0.100 TCP Port: 22 status : open. <br />
 Target Host: 192.168.0.100 TCP Port: 23 status : closed. <br />
 Target Host: 192.168.0.100 TCP Port: 80 status : open. <br />
 
