@@ -11,7 +11,7 @@ It works perfectly, irrespective of the platform, windows, linux unix, macos etc
 
 It can be modified further to automate large number of target and port inputs.
 
-Usage : <br />
+# Usage : <br />
 Give the inputs as list as below <br />
 
 python port-scanner.py <br />
