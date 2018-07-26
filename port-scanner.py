@@ -7,11 +7,14 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 help="""
 Give the inputs as list here
+e.g.
 python port-scanner.py
 Enter list of target IPs: ["127.0.0.1","localhost"]
 Enter list of ports: [11,22,33,]
-"""
 
+
+"""
+print help
 target_hosts = input("Enter list of target IPs: ")
 target_ports = input("Enter list of ports: ")
 
