@@ -23,9 +23,9 @@ def scanner(target,port):
         return False
 
 
-for host in target_hosts:
-	for portNumber in target_ports:
-    		if scanner(host,portNumber):
-        		print "Target Host: {} TCP Port: {} status : open.".format(_host,portNumber)
-    		else:
-        		print "Target Host: {} TCP Port: {} status : closed.".format(host,portNumber)
+for _host in target_hosts:
+        for portNumber in target_ports:
+                if scanner(host,portNumber):
+                        print "Target Host: {} TCP Port: {} status : open.".format(_host,portNumber)
+                else:
+                        print "Target Host: {} TCP Port: {} status : closed.".format(_host,portNumber)
