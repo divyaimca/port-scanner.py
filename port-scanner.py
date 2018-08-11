@@ -2,33 +2,43 @@
 #Author: Priyadarshee Kumar
 #Port scanner
 
+import sys
 import socket
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-help="""
-Give the inputs as list here
-e.g.
-python port-scanner.py
-Enter list of target IPs: ["127.0.0.1","localhost"]
-Enter list of ports: [11,22,33,]
+##Pre_scanner : suppose port is opne in firewall, but service is stopped
+## Useful for doing a pre-validation of datacenter before build
+##
 
+def pre_scanner(port):
+	sock = socket.socket()
+	sock.bind(('0.0.0.0', port))
+	sock.listen(5)
 
-"""
-print help
-target_hosts = input("Enter list of target IPs: ")
-target_ports = input("Enter list of ports: ")
-
-def scanner(target,port):
-    try:
-        sock.connect((target, port))
-        return True
-    except:
-        return False
+	while True:
+   		conn, addr = sock.accept()
+   		print 'Got connection from', addr
+   		conn.send('Thank you for connecting')
+   		conn.close()
 
 
-for _host in target_hosts:
-        for portNumber in target_ports:
-                if scanner(host,portNumber):
-                        print "Target Host: {} TCP Port: {} status : open.".format(_host,portNumber)
-                else:
-                        print "Target Host: {} TCP Port: {} status : closed.".format(_host,portNumber)
+def post_scanner(target,port):
+	try:
+		sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        	status = sock.connect_ex((target, port))
+		sock.close()
+	except socket.error as err:
+		pass
+	return status
+
+
+
+host = raw_input("Enter the hostname:")
+port = int(raw_input("Enter the port:"))
+
+## pre_scanner should be triggered on the server side only
+##pre_scanner(port) 
+
+if post_scanner(host,portNumber) == 0:
+	print "Target Host: {} TCP Port: {} status : open.".format(host,portNumber)
+else:
+	print "Target Host: {} TCP Port: {} status : closed.".format(host,portNumber)
