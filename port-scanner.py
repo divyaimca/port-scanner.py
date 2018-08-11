@@ -33,10 +33,10 @@ def post_scanner(target,port):
 
 
 host = raw_input("Enter the hostname:")
-port = int(raw_input("Enter the port:"))
+portNumber = int(raw_input("Enter the port:"))
 
 ## pre_scanner should be triggered on the server side only
-##pre_scanner(port) 
+##pre_scanner(portNumber) 
 
 if post_scanner(host,portNumber) == 0:
 	print "Target Host: {} TCP Port: {} status : open.".format(host,portNumber)
