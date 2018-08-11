@@ -1,4 +1,4 @@
-# port-scanner.py
+# simple port-scanner with python socket
 
 Sometimes we need to check in remote servers if port is open or not. We use different tools like nmap, telnet, nc etc.
 
