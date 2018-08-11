@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #Author: Priyadarshee Kumar
-#Port scanner
+#Port scanner : opensourced with GPL
 
 import sys
 import socket
