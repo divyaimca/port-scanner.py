@@ -34,10 +34,11 @@ portNumber = int(raw_input("Enter the port:"))
 
 ## socket_server should be triggered on the server side only
 ##socket_server(portNumber) 
-## To check all portsby default, extend it with below rather than taking user input portNumber
+## To check all ports by default, extend it with below rather than taking user input portNumber
 ## for porNumber in range(65535):
 
 if socket_client(host,portNumber) == 0:
 	print "Target Host: {} TCP Port: {} status : open.".format(host,portNumber)
 else:
+	#pass ## Uncomment this while using range of ports and comment below line for Good looking output 
 	print "Target Host: {} TCP Port: {} status : closed.".format(host,portNumber)
